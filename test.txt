@@ -1,0 +1,61 @@
+create table areas
+(
+	rad number(7,2),
+	area number(14,2)
+);
+create table rad_vas
+(
+	rad number(7,2)
+);
+declare
+	pi constant number(9,7):=3.1415927;
+	radi areas.rad%type;
+	a areas.area%type;
+begin
+	radi:=4;
+	a:=pi*power(radi,2);
+	insert into areas values(radi,a);
+end;
+/
+declare
+	pi constant number(9,7):=3.1415927;
+	a areas%rowtype;
+begin
+	a.rad:=6;
+	a.area:=pi*power(a.rad,2);
+	insert into areas values(a.rad,a.area);
+end;
+/
+create table employee
+(
+	employee_id number(8),
+	employee_name varchar2(10),
+	primary key(employee_id)
+);
+
+DECLARE
+	CURSOR emp_cursor IS
+	SELECT employee_id,employee_name
+	FROM employee
+	WHERE employee_name LIKE 'b%';
+	emp_val emp_cursor%ROWTYPE; 
+BEGIN
+	OPEN emp_cursor;
+	FETCH emp_cursor INTO emp_val;
+	DBMS_OUTPUT.PUT_LINE(emp_val.employee_id);
+	CLOSE emp_cursor;
+END;
+/
+Declare  
+Pi	constant NUMBER(9,7) := 3.1415927;  
+area   	NUMBER(14,2);  
+cursor 	rad_cursor is  select * from 	RAD_VAS; 
+rad_val rad_cursor%ROWTYPE;
+begin  
+open rad_cursor; 
+fetch rad_cursor into rad_val;     
+area := pi*power(rad_val.rad,2);    
+insert into AREAS values (rad_val.rad, area);  
+close rad_cursor;
+end;
+/

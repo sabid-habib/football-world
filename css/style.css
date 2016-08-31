@@ -1,0 +1,86 @@
+#cont{
+margin: auto;
+background: url(../images/dw.jpg);
+min-height:400px;
+width: 960px;
+color:white;
+text-align:center;
+padding: 50px;
+    
+}
+
+.custom-form{
+
+margin: auto;
+color: white;
+width: 350px;    
+padding: 20px;    
+border:double 4px #000000;
+-moz-border-radius: 14px;
+-webkit-border-radius: 14px;
+border-radius: 14px;
+
+-moz-box-shadow: 9px 9px 15px #000000;
+-webkit-box-shadow: 9px 9px 15px #000000;
+box-shadow: 9px 9px 15px #000000;
+
+  
+  
+background: black;
+    
+}
+
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input
+{
+    
+    width:340px;
+}
+
+.custom-form2{
+
+
+color: white;
+width: 350px;    
+padding: 20px;    
+
+
+  
+  
+
+}
+
+.custom-div{
+
+margin:auto;    
+width: 800px;
+
+
+
+    
+    
+    
+background: black;
+        
+}
+
+.custom-form3{
+
+margin: auto;
+color: white;
+width: 650px;    
+padding: 20px; 
+}
+.custom-form3.textarea{
+    width= 40%;
+}
+
+.date{
+    width= 30%;
+}
+ 
+h1{
+    color:white;
+    font:60px trajan-pro-1,trajan-pro-2;
+    text-align: center;
+}

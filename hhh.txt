@@ -1,0 +1,147 @@
+Stadium Id Generate
+
+create or replace trigger stadium_id_generate
+before insert on stadiums
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from stadiums;
+if total > 0 then
+	select max(stadium_id) into next from stadiums;
+	:new.stadium_id := next+1;
+else
+:new.stadium_id :=1;
+
+end if;
+
+end;
+/
+
+
+Club Id generate
+
+
+create or replace trigger club_id_generate
+before insert on clubs
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from clubs;
+if total > 0 then
+	select max(club_id) into next from clubs;
+	:new.club_id := next+1;
+else
+:new.club_id :=1;
+
+end if;
+
+end;
+/
+
+
+Manager Id generate
+
+create or replace trigger manager_id_generate
+before insert on managers
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from managers;
+if total > 0 then
+	select max(manager_id) into next from managers;
+	:new.manager_id := next+1;
+else
+:new.manager_id :=1;
+
+end if;
+
+end;
+/
+
+
+Player Id generate
+
+create or replace trigger player_id_generate
+before insert on players
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from players;
+if total > 0 then
+	select max(player_id) into next from players;
+	:new.player_id := next+1;
+else
+:new.player_id :=1;
+
+end if;
+
+end;
+/
+
+Official Id generate
+
+create or replace trigger official_id_generate
+before insert on officials
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from officials;
+if total > 0 then
+	select max(official_id) into next from officials;
+	:new.official_id := next+1;
+else
+:new.official_id :=1;
+
+end if;
+
+end;
+/
+
+create or replace trigger player_id_generate
+before insert on players
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from players;
+if total > 0 then
+	select max(player_id) into next from players;
+	:new.player_id := next+1;
+else
+:new.player_id :=1;
+
+end if;
+
+end;
+/
+
+Match Id:
+create or replace trigger match_id_generate
+before insert on matches
+for each row
+declare 
+	total number;
+	next number;
+begin
+	select count(*) into total from matches;
+if total > 0 then
+	select max(match_id) into next from matches;
+	:new.match_id := next+1;
+else
+:new.match_id :=1;
+
+end if;
+
+end;
+/
